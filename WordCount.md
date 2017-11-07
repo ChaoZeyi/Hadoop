@@ -145,6 +145,10 @@ Artifacts --》 + --》 JAR --> From modules with dependencies
 
 ![META-INF.png](https://github.com/ChaoZeyi/Hadoop/blob/master/pics/META-INF.png?raw=true)
 
+生成jar包时有两个选择，第一个extract to the target JAR指的是把你的主java程序打成jar包，下面那个的意思是除了把你的主java程序打成jar包，还会顺带所有的程序依赖jar包，这样生成的就是一个文件夹下面多个jar包！
+
+我这里选择的是第一种方式！
+
 然后就是根据默认选项一直NEXT，到最后OK
 
 最后一步：Build --》Build Artifacts --》WordCount.jar --> Build
