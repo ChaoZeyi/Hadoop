@@ -73,6 +73,8 @@
 
    ![core-site.png](https://github.com/ChaoZeyi/Hadoop/blob/master/pics/core-site.png?raw=true)
 
+   **注意：如果不修改默认的临时文件地址，还是放在/tmp目录下的话，每次开机所有的临时文件都会被清除，hadoop namenode的一些配置也会被清除，导致每次开启服务时，都需要在重新执行hadoop namenode -format命令**
+
 3. /home/cherry/hadoop/hadoop-2.7.4/etc/hadoop/hdfs-site.xml
 
    ![hdfs-site.png](https://github.com/ChaoZeyi/Hadoop/blob/master/pics/hdfs-site.png?raw=true)
