@@ -53,7 +53,6 @@ cleanup(),此方法被MapReduce框架仅且执行一次，在执行完毕Map任务后，进行相关变量或
         String[] row = value.toString().split(":");
         String rowNumber = row[0];
         String[] columnValues = row[1].split(",");
-        String result = "";
         for(int j = 0; j < matrixB.get(0).length; j++) {
             int res = 0;
             for (int i = 0; i < columnValues.length; i++) {
@@ -61,12 +60,11 @@ cleanup(),此方法被MapReduce框架仅且执行一次，在执行完毕Map任务后，进行相关变量或
                 String value_ = columnValues[i].split("_")[1];
                 res += Integer.parseInt(value_) * Integer.parseInt(matrixB.get(i)[j]);
             }
-            if(j != matrixB.get(0).length -1)
-                result += (j + "_" + res + ",");
-            else
-                result += (j + "_" + res);
+
+             String result = (j + "_" + res);
+            context.write(new Text(rowNumber), new Text(result));
         }
 
-        context.write(new Text(rowNumber), new Text(result));
+
     }
 }
