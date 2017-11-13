@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="IntemCF" />
+        <module name="ItemCF" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="IntemCF" target="1.5" />
+      <module name="ItemCF" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
