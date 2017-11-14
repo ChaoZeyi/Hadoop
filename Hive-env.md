@@ -1,5 +1,15 @@
 ### Hive安装
 
+Hive安装有三种模式：嵌入模式、本地模式和远程模式
+
+嵌入模式：元数据信息被存储在Hive自带的Derby数据库中，同一时间只允许创建一个连接
+
+本地模式：元数据信息被存储在MySQL数据库，并与Hive运行在同一台物理机器上，多用于开发和测试，允许多个连接
+
+远程模式：元数据信息被存储在MySQL数据库，但不在同一台物理机器上，允许多个连接，多用于生产
+
+在这里选择的是本地模式安装。
+
 1. 在http://hive.apache.org页面下载apache-hive-x.y.2-bin.tar.gz(最好选择稳定版)
 2. 解压   tar -zxvf  apache-hive-x.y.2-bin.tar.gz
 3. 配置环境变量，gedit ~/.bashrc
@@ -25,7 +35,7 @@
 
    cp hive-default.xml hive-site.xml
 
-2. 安装msql，执行：
+2. 安装mysql，执行：
 
    sudo apt-get install mysql-server
 
